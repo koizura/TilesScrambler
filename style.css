@@ -1,0 +1,243 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+    cursor: pointer;
+}
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('assets/BebasNeue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+p, h1, h2, span {
+    font-family: BebasNeue, Tahoma, serif;
+    color: #F5D042;
+}
+
+
+
+.top-bar {
+    position: absolute;
+    height:50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: #0A174E;
+    box-shadow: 0px 0px 10px 0px #CCCCCC;
+    -webkit-box-shadow: 0px 0px 10px 0px #CCCCCC;
+    border-bottom: 4px dotted #F5D042;
+
+    z-index: 5;
+}
+.top-bar h1 {
+    position:relative;
+    font-size: 40px;
+    margin: auto;
+}
+.top-bar p {
+    position:relative;
+    font-size: 20px;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #F5D042;
+    text-decoration: none;
+}
+.top-bar a {
+    color: #F5D042;
+}
+.top-bar a:link { text-decoration: none; }
+.top-bar a:visited { text-decoration: none; }
+.top-bar a:hover { text-decoration: none; }
+.top-bar a:active { text-decoration: none; }
+
+
+
+
+.output-container {
+    position: absolute;
+    top: 50px;
+    right: 30%;
+    left: 0;
+    bottom: 0px;
+    background:#0A174E;
+}
+.output-container h2 {
+    margin: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+.canvas-container {
+    width:90%;
+    height: calc(100% - 90px - 90px);
+    margin: auto;
+    display: flex;
+}
+.output-container .p5Canvas {
+    box-shadow: 0px 0px 10px 0px #CCCCCC;
+    -webkit-box-shadow: 0px 0px 10px 0px #CCCCCC;
+    margin: auto;
+}
+
+
+
+
+
+.editor-container {
+    position: absolute;
+    background:#0A174E;
+    right: 0px;
+    top: 50px;
+    left: 70%;
+    bottom: 0px;
+    z-index: 2;
+    border-left: 4px dotted #F5D042;
+}
+.editor-container h2 {
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+.drop-zone {
+    padding:20px;
+    height:200px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 25px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 500;
+    font-size: 20px;
+    cursor: pointer;
+    border: 4px dashed #F5D042;
+    border-radius: 10px;
+}
+.drop-zone--over {
+    border-style: solid;
+}
+.drop-zone__input {
+    display:none;
+}
+.drop-zone__thumb {
+    width: 100%;
+    height:100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+}
+.drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0,0,0,0.75);
+    font-size: 14px;
+    text-align: center;
+}
+
+.filters {
+    width: 90%;
+    margin: auto;
+}
+.filter-text {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+.filter-title {
+    font-size: 25px;
+    margin:auto;
+    margin-left: 0px;
+}
+.filter-value {
+    font-size: 20px;
+    margin:auto;
+    margin-right: 0px;
+}
+.slidecontainer {
+    margin-top: 10px;
+    width: 100%;
+}
+.filters .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #FFFFFF;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.filters .slider:hover {
+    opacity: 1;
+}
+.filters .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #F5D042;
+    cursor: pointer;
+}
+.filters .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #F5D042;
+    cursor: pointer;
+}
